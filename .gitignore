@@ -1,0 +1,94 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE / Editor configs
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.*
+!*.env.example
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+secret.json
+google-services.json
+GoogleService-Info.plist
+
+# =========================
+# React Native (app/)
+# =========================
+app/node_modules/
+app/dist/
+app/build/
+app/coverage/
+
+# Android
+app/android/.gradle/
+app/android/.idea/
+app/android/local.properties
+app/android/.cxx/
+app/android/captures/
+app/android/app/build/
+app/android/build/
+
+# iOS
+app/ios/Pods/
+app/ios/Podfile.lock
+app/ios/build/
+app/ios/DerivedData/
+app/ios/*.xcworkspace
+
+# Metro bundler cache
+app/.metro-cache/
+
+# Watchman
+app/.watchmanconfig
+
+# =========================
+# Spring Boot (backend/)
+# =========================
+backend/**/target/
+backend/**/build/
+backend/**/.gradle/
+backend/**/out/
+
+# Ignore IDE specific in backend
+backend/**/.idea/
+backend/**/.project
+backend/**/.classpath
+backend/**/.settings/
+
+# =========================
+# Test / Coverage
+# =========================
+coverage/
+test-results/
+junit.xml
+
+# =========================
+# Docker / Infra
+# =========================
+infra/.env
+infra/data/
+infra/tmp/
+docker-compose.override.yml
+
