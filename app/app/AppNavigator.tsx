@@ -6,13 +6,21 @@ import RegisterScreen from "./auth/RegisterScreen";
 import HomeScreen from "./main/HomeScreen";
 import TestScreen from "./main/TestScreen";
 
-const Stack = createNativeStackNavigator();
+export type AppNavigatorParamList = {
+  Splash: undefined;
+  Login: undefined;
+  Register: undefined;
+  Home: undefined;
+  test: undefined;
+};
+
+const Stack = createNativeStackNavigator<AppNavigatorParamList>();
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="test"
+        initialRouteName="Login"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Splash" component={SplashScreen} />
@@ -24,3 +32,4 @@ export default function AppNavigator() {
     </NavigationContainer>
   );
 }
+
