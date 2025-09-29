@@ -19,7 +19,7 @@ export default function HeaderBar() {
 
 const styles = StyleSheet.create({
   container: {
-    height: 56,
+    height: 100,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     borderBottomWidth: 1,
     borderBottomColor: "#EEE9F6",
+    paddingTop: 30,
   },
   logo: {
     fontSize: 20,

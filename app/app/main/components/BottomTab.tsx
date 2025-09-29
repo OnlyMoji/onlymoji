@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#EEE9F6",
     backgroundColor: "#FFF",
+    paddingBottom: 10,
   },
   tab: { alignItems: "center", justifyContent: "center", gap: 2 },
   icon: { fontSize: 20 },
