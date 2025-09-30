@@ -12,14 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/user/auth")
+@RequestMapping("/api/auth/user")
 public class UserAuthController {
 
     private final AuthService authService;
 
+
     @PostMapping("/register")
-    public ResponseEntity<UserAuthDtos.SimpleResponse> register(@RequestBody @Valid UserAuthDtos.RegisterRequest req) {
-        authService.registerUser(req);
-        return ResponseEntity.ok(UserAuthDtos.SimpleResponse.ok("register ok"));
+    public ResponseEntity<UserAuthDtos.ApiResponse<UserAuthDtos.UserResponse>> register(
+            @RequestBody @Valid UserAuthDtos.RegisterRequest req) {
+
+        // 서비스에서 실제 User 엔티티 저장 후 DTO로 변환
+        UserAuthDtos.UserResponse userResponse = authService.registerUser(req);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED) // 201 Created
+                .body(UserAuthDtos.ApiResponse.ok("register ok", userResponse));
     }
+
 }
